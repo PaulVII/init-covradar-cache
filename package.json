@@ -1,0 +1,19 @@
+{
+  "name": "init-covradar-cache",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node index"
+  },
+  "author": "Paul Sieben",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^13.1.3",
+    "typescript": "^4.5.5"
+  },
+  "devDependencies": {
+    "ts-node": "^10.4.0"
+  }
+}
