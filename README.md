@@ -13,7 +13,10 @@ npm install
 
 ## Executing
 
-To load both the report and germany page of a covradar instance running at COVRADAR_BASEURL (change in index.ts), run:
+To load both the report and germany page of a covradar instance running at COVRADAR_BASEURL, run:
 ```bash
-npm run start
+npm run start <COVRADAR_BASEURL>
 ```
+
+The program will try to access COVRADAR_BASEURL/report and COVRADAR_BASEURL/germany
+You can also just run `npm run start`, in that case the default baseurl of https://covradar.net will be used.

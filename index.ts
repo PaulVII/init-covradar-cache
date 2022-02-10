@@ -1,13 +1,15 @@
 import Puppeteer, { Page } from "puppeteer";
 
 
-const COVRADAR_BASEURL = 'https://covradar.net';
 
 (async function () {
+    const COVRADAR_BASEURL = process.argv[2] ?? 'https://covradar.net';
+    console.log('Filling cache of the app at ' + COVRADAR_BASEURL)
+
     // We're using an actual browser to make sure that 
     // all Dash requests are sent properly so that their
     // results are being cached
-    let browser = await Puppeteer.launch({});
+    let browser = await Puppeteer.launch({ args: ["--no-sandbox"] });
     let page = await browser.newPage();
 
     //uncomment the lines below for debugging 
@@ -46,6 +48,7 @@ const COVRADAR_BASEURL = 'https://covradar.net';
     console.log('trying to load:  ' + COVRADAR_BASEURL + '/germany')
     await page.goto(COVRADAR_BASEURL + '/germany');
     await waitForCorrectTitle(page);
+    return;
 })()
 
 function sleep(ms: number) {
